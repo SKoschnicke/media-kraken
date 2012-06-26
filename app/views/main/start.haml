@@ -1,0 +1,7 @@
+%h1 Willkommen!
+%div{:style => 'text-align: center'}
+  =form_tag :login, :class => 'well form-inline' do
+    =label_tag :name, 'Dein Vorname:', :class => 'label-large'
+    =text_field_tag :name, '', :class => 'input-large'
+
+    =submit_tag 'Anmelden', :class => 'btn btn-large'

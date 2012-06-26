@@ -1,7 +1,16 @@
 MediaKraken::Application.routes.draw do
+
+  namespace :admin do
+    resources :users, :except => :show
+  end
+
+  resources :media, :only => [:create, :xhr_create]
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
+  match 'login' => 'main#login', :method => :post, :as => :login
+  match 'logout' => 'main#logout', :as => :logout
+  match 'overview' => 'main#overview', :as => :overview
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action
@@ -48,7 +57,7 @@ MediaKraken::Application.routes.draw do
 
   # You can have the root of your site routed with "root"
   # just remember to delete public/index.html.
-  # root :to => "welcome#index"
+  root :to => "main#start"
 
   # See how all your routes lay out with "rake routes"
 

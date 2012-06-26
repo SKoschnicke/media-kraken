@@ -2,13 +2,24 @@
 <html>
 <head>
   <title>MediaKraken</title>
-  <%= stylesheet_link_tag :all %>
-  <%= javascript_include_tag :defaults %>
+  <%= stylesheet_link_tag "application" %>
+  <%= javascript_include_tag "application" %>
   <%= csrf_meta_tag %>
 </head>
 <body>
 
+<div id="content">
+<% if flash[:notice] %>
+  <div class="alert alert-info"><%= flash[:notice] %></div>
+<% end %>
+<% if flash[:alert] %>
+  <div class="alert alert-error"><%= flash[:alert] %></div>
+<% end %>
+<% if flash[:success] %>
+  <div class="alert alert-success"><%= flash[:success] %></div>
+<% end %>
 <%= yield %>
+</div>
 
 </body>
 </html>

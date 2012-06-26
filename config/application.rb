@@ -38,5 +38,9 @@ module MediaKraken
 
     # Configure sensitive parameters which will be filtered from the log file.
     config.filter_parameters += [:password]
+
+    config.assets.enabled = true
+
+    config.middleware.use 'Rack::RawUpload', :paths => ['/media']
   end
 end

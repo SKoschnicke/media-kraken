@@ -18,3 +18,4 @@ pickle-email-*.html
 db/*.sqlite3
 log/*.log
 tmp/
+/public/uploads/*
