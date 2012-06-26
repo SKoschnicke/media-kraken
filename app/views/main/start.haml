@@ -1,7 +1,9 @@
-%h1 Willkommen!
-%div{:style => 'text-align: center'}
-  =form_tag :login, :class => 'well form-inline' do
-    =label_tag :name, 'Dein Vorname:', :class => 'label-large'
-    =text_field_tag :name, '', :class => 'input-large'
+%div{:class => 'hero-unit'}
+  %h1 Willkommen!
+  %p Auf dieser Seite könnt ihr Fotos hochladen.
+  %div{:style => 'text-align: center'}
+    =form_tag :login, :class => 'well form-inline' do
+      =label_tag :name, 'Dein Vorname:', :class => 'label-large'
+      =text_field_tag :name, '', :class => 'input-large'
 
-    =submit_tag 'Anmelden', :class => 'btn btn-large'
+      =submit_tag 'Anmelden', :class => 'btn btn-large btn-primary'
