@@ -1,6 +1,6 @@
-%h1 Listing users
+%h1 Benutzer
 
-%table
+%table{:class => 'table'}
   %tr
     %th Name
     %th
@@ -9,9 +9,9 @@
     %tr
       %td= user.name
       %td
-        = link_to 'Edit', [:edit, :admin, user]
-        = link_to 'Destroy', [:admin, user], :confirm => 'Are you sure?', :method => :delete
+        = link_to 'Bearbeiten', [:edit, :admin, user], :class => 'btn btn-mini'
+        = link_to 'Löschen', [:admin, user], :confirm => 'Bist Du sicher?', :method => :delete, :class => 'btn btn-mini'
 
 %br
 
-%div{:class => "btn primary"}= link_to 'New User', new_admin_user_path
+%div{:class => "btn primary"}= link_to 'Neuer Benutzer', new_admin_user_path

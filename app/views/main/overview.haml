@@ -4,7 +4,9 @@
   %div{:class => 'span6'}
     %h2= "Hallo #{@user.name}!"
     %p{:class => 'lead'} Schön, daß Du da bist.
-    = link_to "Abmelden", :logout, :class => 'btn'
+    %a{:class => 'btn', :href => '#{path_to :logout}' }
+      %i{:class => 'icon-off'}
+      Abmelden
 
   %div{:class => 'span6'}
     %h2 Dateien hochladen
@@ -30,7 +32,22 @@
         },
         onComplete: function(id, fileName, responseJSON){
           alert(responseJSON.toString());
-        }
+        },
+        template: '<div class="qq-uploader">' + 
+                '<div class="qq-upload-drop-area"><span>Ziehe Dateien hierher um sie hochzuladen</span></div>' +
+                '<div class="qq-upload-button btn btn-primary">Dateien hochladen</div>' +
+                '<ul class="qq-upload-list"></ul>' + 
+             '</div>',
+
+        // template for one item in file list
+        fileTemplate: '<li>' +
+                '<span class="qq-upload-file"></span>' +
+                '<span class="qq-upload-spinner"></span>' +
+                '<span class="qq-upload-size"></span>' +
+                '<a class="qq-upload-cancel" href="#">Cancel</a>' +
+                '<span class="qq-upload-failed-text">Failed</span>' +
+            '</li>',        
+
       });
   });
 
