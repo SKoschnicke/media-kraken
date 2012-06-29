@@ -25,4 +25,14 @@ class MainController < ApplicationController
     reset_session
     redirect_to root_url, flash: {success: 'Du hast dich abgemeldet'}
   end
+
+  # is called via ajax
+  def media_list
+    if session[:user_id].nil? or (@user = User.find session[:user_id]).nil?
+      head 401 # Unauthorized
+    else
+      render :partial => 'media_list', :locals => {:media => @user.media}, :layout => false
+    end
+  end
+
 end

@@ -11,6 +11,7 @@ MediaKraken::Application.routes.draw do
   match 'login' => 'main#login', :method => :post, :as => :login
   match 'logout' => 'main#logout', :as => :logout
   match 'overview' => 'main#overview', :as => :overview
+  match 'media_list' => 'main#media_list', :as => :media_list
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action

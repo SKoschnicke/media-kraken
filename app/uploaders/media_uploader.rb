@@ -30,8 +30,8 @@ class MediaUploader < CarrierWave::Uploader::Base
 
   protected
 
-    def is_picture?(mod)
-      mod.picture?
+    def is_picture?(file)
+      model.picture?
     end
 
 end

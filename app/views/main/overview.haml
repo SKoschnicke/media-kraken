@@ -19,7 +19,7 @@
 
 %div{:class => 'row'}
 
-  %div{:class => 'span6 offset6'}
+  %div{:class => 'span6 offset6', :id => 'media_list'}
     =render :partial => 'media_list', :locals => {:media => @user.media}
 
 :javascript
@@ -35,7 +35,10 @@
           authenticity_token: "#{form_authenticity_token.to_s}"
         },
         onComplete: function(id, fileName, responseJSON){
-          alert(responseJSON.toString());
+          $.get('#{media_list_path}', function(data) {
+            $('#media_list').html(data);
+            alert('aktualisiert');
+          });
         },
         template: '<div class="qq-uploader">' + 
                 '<div class="qq-upload-drop-area"><span>Ziehe Dateien hierher um sie hochzuladen</span></div>' +
