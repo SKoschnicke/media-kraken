@@ -1,3 +1,12 @@
 class User < ActiveRecord::Base
-  # attr_accessible :title, :body
+
+  has_many :media, :class_name => 'Media'
+
+  before_validation do
+    self.name = User.sanitize_name(name)
+  end
+
+  def self.sanitize_name(name)
+    name.trim.titelize
+  end
 end

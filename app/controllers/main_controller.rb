@@ -5,7 +5,7 @@ class MainController < ApplicationController
 
   # gets POST with name from index
   def login
-    user = User.find_by_name params[:name]
+    user = User.find_by_name User.sanitize_name(params[:name])
     if user.nil?
       redirect_to root_url, alert: 'Dein Name ist mir nicht bekannt.'
     else

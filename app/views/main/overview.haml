@@ -17,6 +17,10 @@
       %noscript
         Bitte aktiviere Javascript
 
+%div{:class => 'row'}
+
+  %div{:class => 'span6 offset6'}
+    =render :partial => 'media_list', :locals => {:media => @user.media}
 
 :javascript
   $(function(){

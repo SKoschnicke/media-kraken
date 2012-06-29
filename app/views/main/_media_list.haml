@@ -1,0 +1,14 @@
+%p
+  -if media.size == 0
+    Du hast noch keine Dateien hochgeladen :(
+  -elsif media.size == 1
+    Du hast insgesamt eine Datei hochgeladen.
+  -else
+    Du hast insgesamt #{media.size} Dateien hochgeladen.
+%ul{:class => 'thumbnails'}
+  -for media_object in media do
+    %li{:class => 'span2 thumbnail'}
+      -if media_object.picture?
+        %img{:src => media_object.file.thumb.url}
+      -else
+        =media_object.filename
