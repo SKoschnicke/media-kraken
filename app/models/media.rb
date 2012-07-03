@@ -7,6 +7,7 @@ class Media < ActiveRecord::Base
   PICTURE_FILE_SUFFIXES = %w(png gif jpg jpeg)
 
   def picture?
+    Rails.logger.debug "filename is #{filename.inspect}"
     return false if filename.nil?
     PICTURE_FILE_SUFFIXES.any?{|s| filename.downcase[-s.length..-1] == s.downcase}
   end

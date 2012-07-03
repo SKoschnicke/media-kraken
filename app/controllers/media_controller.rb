@@ -20,6 +20,7 @@ class MediaController < ApplicationController
     if @media.save
       render :json => { success: true }
     else
+      Rails.logger.error @media.errors.inspect
       render :json => @media.errors.to_json
     end
   end

@@ -37,7 +37,6 @@
         onComplete: function(id, fileName, responseJSON){
           $.get('#{media_list_path}', function(data) {
             $('#media_list').html(data);
-            alert('aktualisiert');
           });
         },
         template: '<div class="qq-uploader">' + 
