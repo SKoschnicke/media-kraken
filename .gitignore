@@ -19,4 +19,3 @@ db/*.sqlite3
 log/*.log
 tmp/
 /public/uploads/*
-config/initializers/carrierwave.rb
