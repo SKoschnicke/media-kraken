@@ -2,7 +2,11 @@ source 'http://rubygems.org'
 
 gem 'rails'
 
-gem 'pg'
+group :production do
+  gem 'pg'
+  gem 'uglifier'
+  gem 'therubyracer'
+end
 
 # Use unicorn as the web server
 gem 'unicorn'
