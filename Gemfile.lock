@@ -81,6 +81,7 @@ GEM
       net-ssh (>= 1.99.1)
     net-ssh (2.5.2)
     nokogiri (1.5.5)
+    pg (0.14.0)
     polyglot (0.3.3)
     rack (1.4.1)
     rack-cache (1.2)
@@ -140,6 +141,7 @@ DEPENDENCIES
   haml-rails
   jquery-rails
   less-rails-bootstrap
+  pg
   rack-raw-upload
   rails
   rmagick

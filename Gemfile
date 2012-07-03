@@ -2,7 +2,7 @@ source 'http://rubygems.org'
 
 gem 'rails'
 
-gem 'sqlite3'
+gem 'pg'
 
 # Use unicorn as the web server
 gem 'unicorn'
@@ -30,6 +30,6 @@ gem 'rmagick'
 # Bundle gems for the local environment. Make sure to
 # put test-only gems in this group so their generators
 # and rake tasks are available in development mode:
-# group :development, :test do
-#   gem 'webrat'
-# end
+group :development, :test do
+  gem 'sqlite3'
+end
