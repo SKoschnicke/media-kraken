@@ -1,14 +1,14 @@
 
 %div{:class => 'row'}
 
-  %div{:class => 'span6'}
+  %div{:class => 'span4'}
     %h2= "Hallo #{@user.name}!"
     %p{:class => 'lead'} Schön, daß Du da bist.
     %a{:class => 'btn', :href => '#{path_to :logout}' }
       %i{:class => 'icon-off'}
       Abmelden
 
-  %div{:class => 'span6'}
+  %div{:class => 'span8'}
     %h2 Dateien hochladen
     %p
       Klicke auf den Button oder ziehe Dateien dorthin um sie hochzuladen.
@@ -19,7 +19,7 @@
 
 %div{:class => 'row'}
 
-  %div{:class => 'span6 offset6', :id => 'media_list'}
+  %div{:class => 'span8 offset4', :id => 'media_list'}
     =render :partial => 'media_list', :locals => {:media => @user.media}
 
 :javascript

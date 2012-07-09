@@ -25,7 +25,7 @@ class MediaUploader < CarrierWave::Uploader::Base
   end
 
   version :thumb, :if => :is_picture? do
-    process :resize_to_fill => [50, 50]
+    process :resize_to_fill => [140, 140]
   end
 
   protected
