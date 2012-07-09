@@ -1,4 +1,13 @@
 class Admin::UsersController < ApplicationController
+
+  before_filter :require_http_basic_auth
+
+  def require_http_basic_auth
+    authenticate_or_request_with_http_basic do |login, password|
+      password == ENV['admin_password']
+    end
+  end
+
   # GET /users
   # GET /users.json
   def index
