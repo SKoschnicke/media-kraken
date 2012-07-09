@@ -7,6 +7,6 @@ class User < ActiveRecord::Base
   end
 
   def self.sanitize_name(name)
-    name.strip.titleize
+    name.strip
   end
 end
