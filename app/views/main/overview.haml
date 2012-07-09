@@ -4,7 +4,7 @@
   %div{:class => 'span4'}
     %h2= "Hallo #{@user.name}!"
     %p{:class => 'lead'} Schön, daß Du da bist.
-    %a{:class => 'btn', :href => '#{path_to :logout}' }
+    %a{:class => 'btn', :href => "#{url_for :logout}" }
       %i{:class => 'icon-off'}
       Abmelden
 
