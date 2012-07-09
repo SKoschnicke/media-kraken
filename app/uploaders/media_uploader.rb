@@ -31,7 +31,6 @@ class MediaUploader < CarrierWave::Uploader::Base
   protected
 
     def is_picture?(file)
-      return false
       res = file.content_type.include? 'image'
       Rails.logger.debug "file is picture #{res.inspect}"
       return res
